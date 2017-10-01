@@ -12,15 +12,13 @@
 
 ## Intel Tiny Tile
 
-Intel's Arduino BLE chip.
+Intel's Arduino IDE programmable BLE chip.
 
-This firmware for today:  https://github.com/monteslu/ble-io/tree/master/arduino/curie_plus
-
+The firmware we're using:  https://github.com/monteslu/ble-io/tree/master/arduino/curie_plus
 
 ## Bot Assembly
 
-[![bot assembly](sprout_main_600px.jpg)](https://www.youtube.com/watch?v=LGfNfUv5Eqs)
-
+|
 * build the chassis
 * connect motors to the motor controller
 * connect battery pack to the motor controller
@@ -28,6 +26,11 @@ This firmware for today:  https://github.com/monteslu/ble-io/tree/master/arduino
 * connect the motor controller pins to the Tiny Tile
 * connect the LED's to the Tiny Tile
 * customize!
+|
+[![bot assembly](sprout_main_600px.jpg)](https://www.youtube.com/watch?v=LGfNfUv5Eqs)
+|
+
+
 
 ![screenshot](wiring.png)
 
