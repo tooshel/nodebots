@@ -1,3 +1,11 @@
+<style type="text/css">
+.image-right {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  float: right;
+}
+</style>
 # WTM Tucson Hackathon 2017
 
 ## What is Bluetooth Low Energy?
@@ -18,7 +26,8 @@ The firmware we're using:  https://github.com/monteslu/ble-io/tree/master/arduin
 
 ## Bot Assembly
 
-|
+[![bot assembly](sprout_main_600px.jpg)](https://www.youtube.com/watch?v=LGfNfUv5Eqs){:.image-right}
+
 * build the chassis
 * connect motors to the motor controller
 * connect battery pack to the motor controller
@@ -26,9 +35,8 @@ The firmware we're using:  https://github.com/monteslu/ble-io/tree/master/arduin
 * connect the motor controller pins to the Tiny Tile
 * connect the LED's to the Tiny Tile
 * customize!
-|
-[![bot assembly](sprout_main_600px.jpg)](https://www.youtube.com/watch?v=LGfNfUv5Eqs)
-|
+
+
 
 
 
