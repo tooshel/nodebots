@@ -28,8 +28,15 @@ https://github.com/monteslu/ble-io/tree/master/arduino/curie_plus
 * connect the LED's to the Tiny Tile
 * customize it!
 
+## Wiring Power Motors
 
-![screenshot](wiring.png)
+![wiring power-motors](wiring-power-motors.png)
+
+## Wiring Pins
+
+![wiring pins](wiring.png)
+
+
 
 ## Pagenodes tips
 
