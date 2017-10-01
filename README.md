@@ -5,37 +5,37 @@
 ![screenshot](ble-diagram.png)
 
 
-## Pagenodes (the "node" in nodebots)
+## Pagenodes (the other "node" in nodebots)
 
 [https://pagenodes.com](https://pagenodes.com)
 
-
 ## Intel Tiny Tile
 
-Intel's Arduino IDE programmable BLE chip.
+Intel's Arduino IDE programmable BLE board
 
-The firmware we're using:  https://github.com/monteslu/ble-io/tree/master/arduino/curie_plus
+The firmware we're using: <br>
+https://github.com/monteslu/ble-io/tree/master/arduino/curie_plus
 
 ## Bot Assembly
 
 [bot assembly video](https://www.youtube.com/watch?v=LGfNfUv5Eqs)
 
-<a href="https://www.youtube.com/watch?v=LGfNfUv5Eqs"><img width="200" align="right" src="sprout_main_600px.jpg"></a>
+<a href="https://www.youtube.com/watch?v=LGfNfUv5Eqs"><img width="200" align="right" src="chassis-sprout.png"></a>
 
-* build the chassis
+* build the chassis (see video above)
 * connect motors to the motor controller
 * connect battery pack to the motor controller
 * connect the motor controller power to the power of the Tiny Tile
 * connect the motor controller pins to the Tiny Tile
 * connect the LED's to the Tiny Tile
-* customize!
+* customize it!
 
 
 ![screenshot](wiring.png)
 
-# Pagenodes tips
+## Pagenodes tips
 
-### directional movement
+#### directional movement
 
 * Right wheel forward:
 digital: `[8,1]` and `[7,0]`
@@ -50,7 +50,7 @@ digital: `[8,0]` and `[7,1]`
 digital: `[5,0]` and `[4,1]`
 
 
-### speed
+#### speed
 
 * Right wheel full speed:
 analog: `[9,255]`
@@ -65,7 +65,7 @@ analog: `[9,0]`
 analog: `[3,0]`
 
 
-### LEDs
+#### LEDs
 
 * curie/neopixel Characteristic `2a5b`
 
@@ -76,7 +76,7 @@ analog: `[3,0]`
 * multiple pixels: `[3,12, 2, 127,255,100, 1, 255,0,10]` - [pixel command, pin #, pixel#,  R, G, B, pixel #,  R, G, B]
 
 
-### Bot connecting notes
+#### Bot connecting notes
 
 * service Id: `bada5555-e91f-1337-a49b-8675309fb099`
 
@@ -110,5 +110,7 @@ With this, you can use the IoT Controls in pagenode (look in the hamburger menu)
 ## Example using the Gamepad
 
 ```javascript
-[{"id":"lGtmbXU889c","type":"debug","z":"95cc07fa.4951b8","name":"dbgOut","active":false,"console":"false","complete":"true","x":919,"y":871,"wires":[]},{"id":"Paps6BjAe6M","type":"bluetooth out","z":"95cc07fa.4951b8","name":"digital","characteristicId":"2a56","bleServiceId":"bada5555-e91f-1337-a49b-8675309fb099","x":757,"y":920,"wires":[]},{"id":"kwAW_Ncq8z4","type":"bluetooth out","z":"95cc07fa.4951b8","name":"analog","characteristicId":"2a58","bleServiceId":"bada5555-e91f-1337-a49b-8675309fb099","x":872,"y":405,"wires":[]},{"id":"OFM4NmOZqeM","type":"gamepad","z":"95cc07fa.4951b8","name":"snes-pad","controllerId":"1","refreshInterval":"60","onlyButtonChanges":false,"roundAxes":true,"x":59.5,"y":483,"wires":[["C2H2YWIlaEQ","qQkizms85u0","a3KF79pWPAg","xfPIGd8oUUA","AZdMtjqiVlI"]]},{"id":"C2H2YWIlaEQ","type":"switch","z":"95cc07fa.4951b8","name":"swForward","property":"payload.axes[1]","propertyType":"msg","rules":[{"t":"eq","v":"-1","vt":"num"},{"t":"eq","v":"0","vt":"str"}],"checkall":"true","outputs":2,"x":219,"y":263,"wires":[["R1T6MwQBHGE","13mn7q529Ag","dTVIG26dXNI"],[]]},{"id":"R1T6MwQBHGE","type":"change","z":"95cc07fa.4951b8","name":"forward right","rules":[{"t":"set","p":"payload","pt":"msg","to":"[8,1,7,0]","tot":"json"}],"action":"","property":"","from":"","to":"","reg":false,"x":416,"y":20,"wires":[["Paps6BjAe6M"]]},{"id":"13mn7q529Ag","type":"change","z":"95cc07fa.4951b8","name":"high right & left","rules":[{"t":"set","p":"payload","pt":"msg","to":"[9,255,0,3,255,0]","tot":"json"}],"action":"","property":"","from":"","to":"","reg":false,"x":421,"y":85,"wires":[["kwAW_Ncq8z4"]]},{"id":"dTVIG26dXNI","type":"change","z":"95cc07fa.4951b8","name":"forward left","rules":[{"t":"set","p":"payload","pt":"msg","to":"[5,1,4,0]","tot":"json"}],"action":"","property":"","from":"","to":"","reg":false,"x":413,"y":52,"wires":[["Paps6BjAe6M"]]},{"id":"e5LEJCw2Yb4","type":"change","z":"95cc07fa.4951b8","name":"stop right & left","rules":[{"t":"set","p":"payload","pt":"msg","to":"[9,0,0,3,0,0]","tot":"json"}],"action":"","property":"","from":"","to":"","reg":false,"x":493,"y":209,"wires":[["kwAW_Ncq8z4"]]},{"id":"9jlU4oKLY2c","type":"change","z":"95cc07fa.4951b8","name":"reverse right","rules":[{"t":"set","p":"payload","pt":"msg","to":"[8,0,7,1]","tot":"json"}],"action":"","property":"","from":"","to":"","reg":false,"x":464,"y":300,"wires":[["Paps6BjAe6M"]]},{"id":"h973LeYamWg","type":"change","z":"95cc07fa.4951b8","name":"reverse left","rules":[{"t":"set","p":"payload","pt":"msg","to":"[5,0,4,1]","tot":"json"}],"action":"","property":"","from":"","to":"","reg":false,"x":474,"y":343,"wires":[["Paps6BjAe6M"]]},{"id":"mNp8JkfdqUs","type":"change","z":"95cc07fa.4951b8","name":"high right & left","rules":[{"t":"set","p":"payload","pt":"msg","to":"[9,255,0,3,255,0]","tot":"json"}],"action":"","property":"","from":"","to":"","reg":false,"x":470,"y":393,"wires":[[]]},{"id":"-NODcT7hC2E","type":"change","z":"95cc07fa.4951b8","name":"high right & left","rules":[{"t":"set","p":"payload","pt":"msg","to":"[9,255,0,3,255,0]","tot":"json"}],"action":"","property":"","from":"","to":"","reg":false,"x":480,"y":760,"wires":[["kwAW_Ncq8z4"]]},{"id":"kPswA027SEk","type":"change","z":"95cc07fa.4951b8","name":"forward left","rules":[{"t":"set","p":"payload","pt":"msg","to":"[5,1,4,0]","tot":"json"}],"action":"","property":"","from":"","to":"","reg":false,"x":474,"y":829,"wires":[["Paps6BjAe6M"]]},{"id":"KwRFl-oLn28","type":"change","z":"95cc07fa.4951b8","name":"reverse left","rules":[{"t":"set","p":"payload","pt":"msg","to":"[5,0,4,1]","tot":"json"}],"action":"","property":"","from":"","to":"","reg":false,"x":471,"y":625,"wires":[["Paps6BjAe6M"]]},{"id":"U50V66ZjV6o","type":"change","z":"95cc07fa.4951b8","name":"forward right","rules":[{"t":"set","p":"payload","pt":"msg","to":"[8,1,7,0]","tot":"json"}],"action":"","property":"","from":"","to":"","reg":false,"x":473,"y":658,"wires":[["Paps6BjAe6M"]]},{"id":"O_sx2TNINz4","type":"change","z":"95cc07fa.4951b8","name":"reverse right","rules":[{"t":"set","p":"payload","pt":"msg","to":"[8,0,7,1]","tot":"json"}],"action":"","property":"","from":"","to":"","reg":false,"x":477,"y":863,"wires":[["Paps6BjAe6M"]]},{"id":"qQkizms85u0","type":"function","z":"95cc07fa.4951b8","name":"fnStop","func":"var axes = msg.payload.axes;\nvar [x, y, z] = axes;\nvar ret;\nif(x==0 && y==0 && z==0) {\n    ret = msg;\n} \nreturn ret;","outputs":1,"noerr":0,"x":217,"y":410,"wires":[["e5LEJCw2Yb4","lGtmbXU889c"]]},{"id":"a3KF79pWPAg","type":"switch","z":"95cc07fa.4951b8","name":"swTurnRight","property":"payload.axes[0]","propertyType":"msg","rules":[{"t":"eq","v":"-1","vt":"str"}],"checkall":"true","outputs":1,"x":213,"y":622,"wires":[["-NODcT7hC2E","KwRFl-oLn28","U50V66ZjV6o"]]},{"id":"xfPIGd8oUUA","type":"switch","z":"95cc07fa.4951b8","name":"swTurnLeft","property":"payload.axes[0]","propertyType":"msg","rules":[{"t":"eq","v":"1","vt":"str"}],"checkall":"true","outputs":1,"x":211,"y":828,"wires":[["-NODcT7hC2E","kPswA027SEk","O_sx2TNINz4"]]},{"id":"AZdMtjqiVlI","type":"switch","z":"95cc07fa.4951b8","name":"swReverse","property":"payload.axes[1]","propertyType":"msg","rules":[{"t":"eq","v":"1","vt":"num"}],"checkall":"true","outputs":1,"x":209,"y":959,"wires":[["3Br3hggj0_Q","RY8Tt9Y5SnE","cd_PG-9i-tg"]]},{"id":"cd_PG-9i-tg","type":"change","z":"95cc07fa.4951b8","name":"reverse right","rules":[{"t":"set","p":"payload","pt":"msg","to":"[8,0,7,1]","tot":"json"}],"action":"","property":"","from":"","to":"","reg":false,"x":487,"y":1088,"wires":[["Paps6BjAe6M"]]},{"id":"RY8Tt9Y5SnE","type":"change","z":"95cc07fa.4951b8","name":"reverse left","rules":[{"t":"set","p":"payload","pt":"msg","to":"[5,0,4,1]","tot":"json"}],"action":"","property":"","from":"","to":"","reg":false,"x":479,"y":1047,"wires":[["Paps6BjAe6M"]]},{"id":"3Br3hggj0_Q","type":"change","z":"95cc07fa.4951b8","name":"high right & left","rules":[{"t":"set","p":"payload","pt":"msg","to":"[9,255,0,3,255,0]","tot":"json"}],"action":"","property":"","from":"","to":"","reg":false,"x":481,"y":1000,"wires":[["kwAW_Ncq8z4"]]}]
+[{"id":"EOD-5sDAqoM","type":"bluetooth out","z":"GVRIYaaKF9I","name":"digital","characteristicId":"2a56","bleServiceId":"bada5555-e91f-1337-a49b-8675309fb099","x":923.0714645385742,"y":465.2856788635254,"wires":[]},{"id":"BAtsltu4B_M","type":"bluetooth out","z":"GVRIYaaKF9I","name":"analog","characteristicId":"2a58","bleServiceId":"bada5555-e91f-1337-a49b-8675309fb099","x":909.5000286102295,"y":160.28571701049805,"wires":[]},{"id":"9MkFzlmOdDg","type":"gamepad","z":"GVRIYaaKF9I","name":"snes-pad1","controllerId":"0","refreshInterval":"60","onlyButtonChanges":false,"roundAxes":true,"x":186.35713958740234,"y":325.714298248291,"wires":[["uvbETkczet8","saQPVQ1Soeg","wgRkYEtuLAk","YlQdKXpDWfg","udqeE7qhXJ0"]]},{"id":"uvbETkczet8","type":"switch","z":"GVRIYaaKF9I","name":"swForward","property":"payload.axes[1]","propertyType":"msg","rules":[{"t":"eq","v":"-1","vt":"num"},{"t":"eq","v":"0","vt":"str"}],"checkall":"true","outputs":2,"x":383.64286041259766,"y":122.57142925262451,"wires":[["Obth86UbJjU","qsc10SA97UY","53_CLRdtJ7s"],[]]},{"id":"Obth86UbJjU","type":"change","z":"GVRIYaaKF9I","name":"forward right","rules":[{"t":"set","p":"payload","pt":"msg","to":"[8,1,7,0]","tot":"json"}],"action":"","property":"","from":"","to":"","reg":false,"x":617.7857208251953,"y":118.14286994934082,"wires":[["EOD-5sDAqoM"]]},{"id":"qsc10SA97UY","type":"change","z":"GVRIYaaKF9I","name":"high right & left","rules":[{"t":"set","p":"payload","pt":"msg","to":"[9,255,0,3,255,0]","tot":"json"}],"action":"","property":"","from":"","to":"","reg":false,"x":621.3571548461914,"y":73.14285945892334,"wires":[["BAtsltu4B_M"]]},{"id":"53_CLRdtJ7s","type":"change","z":"GVRIYaaKF9I","name":"forward left","rules":[{"t":"set","p":"payload","pt":"msg","to":"[5,1,4,0]","tot":"json"}],"action":"","property":"","from":"","to":"","reg":false,"x":614.7857208251953,"y":161.57143783569336,"wires":[["EOD-5sDAqoM"]]},{"id":"NPDLFyHaBSs","type":"change","z":"GVRIYaaKF9I","name":"stop right & left","rules":[{"t":"set","p":"payload","pt":"msg","to":"[9,0,0,3,0,0]","tot":"json"}],"action":"","property":"","from":"","to":"","reg":false,"x":621.9285202026367,"y":370.0000023841858,"wires":[["BAtsltu4B_M"]]},{"id":"ebUyVAtI2DM","type":"change","z":"GVRIYaaKF9I","name":"high right & left","rules":[{"t":"set","p":"payload","pt":"msg","to":"[9,255,0,3,255,0]","tot":"json"}],"action":"","property":"","from":"","to":"","reg":false,"x":638.9286231994629,"y":521.0000152587891,"wires":[["BAtsltu4B_M"]]},{"id":"k7hQRgogjcA","type":"change","z":"GVRIYaaKF9I","name":"forward left","rules":[{"t":"set","p":"payload","pt":"msg","to":"[5,1,4,0]","tot":"json"}],"action":"","property":"","from":"","to":"","reg":false,"x":626.3571128845215,"y":621.0000419616699,"wires":[["EOD-5sDAqoM"]]},{"id":"giSNSZps0uI","type":"change","z":"GVRIYaaKF9I","name":"reverse left","rules":[{"t":"set","p":"payload","pt":"msg","to":"[5,0,4,1]","tot":"json"}],"action":"","property":"","from":"","to":"","reg":false,"x":634.2142944335938,"y":416.00000190734863,"wires":[["EOD-5sDAqoM"]]},{"id":"EUQsvxtcq8Y","type":"change","z":"GVRIYaaKF9I","name":"forward right","rules":[{"t":"set","p":"payload","pt":"msg","to":"[8,1,7,0]","tot":"json"}],"action":"","property":"","from":"","to":"","reg":false,"x":633.3571319580078,"y":460.42858123779297,"wires":[["EOD-5sDAqoM"]]},{"id":"6fywZa-LRLo","type":"change","z":"GVRIYaaKF9I","name":"reverse right","rules":[{"t":"set","p":"payload","pt":"msg","to":"[8,0,7,1]","tot":"json"}],"action":"","property":"","from":"","to":"","reg":false,"x":631.6428375244141,"y":577.7142906188965,"wires":[["EOD-5sDAqoM"]]},{"id":"saQPVQ1Soeg","type":"function","z":"GVRIYaaKF9I","name":"fnStop","func":"var axes = msg.payload.axes;\nvar [x, y] = axes;\nvar ret;\nif(x==0 && y==0) {\n    ret = msg;\n} \nreturn ret;","outputs":1,"noerr":0,"x":387.3571662902832,"y":372.4285697937012,"wires":[["NPDLFyHaBSs"]]},{"id":"wgRkYEtuLAk","type":"switch","z":"GVRIYaaKF9I","name":"swTurnRight","property":"payload.axes[0]","propertyType":"msg","rules":[{"t":"eq","v":"-1","vt":"str"}],"checkall":"true","outputs":1,"x":404.78570556640625,"y":495.85717010498047,"wires":[["ebUyVAtI2DM","giSNSZps0uI","EUQsvxtcq8Y"]]},{"id":"YlQdKXpDWfg","type":"switch","z":"GVRIYaaKF9I","name":"swTurnLeft","property":"payload.axes[0]","propertyType":"msg","rules":[{"t":"eq","v":"1","vt":"str"}],"checkall":"true","outputs":1,"x":407.07141876220703,"y":554.7142715454102,"wires":[["ebUyVAtI2DM","k7hQRgogjcA","6fywZa-LRLo"]]},{"id":"udqeE7qhXJ0","type":"switch","z":"GVRIYaaKF9I","name":"swReverse","property":"payload.axes[1]","propertyType":"msg","rules":[{"t":"eq","v":"1","vt":"num"}],"checkall":"true","outputs":1,"x":387.9285888671875,"y":279.999981880188,"wires":[["UamtW8Jh-c0","t_k2E4xA2-Q","IXesNgryRrQ"]]},{"id":"t_k2E4xA2-Q","type":"change","z":"GVRIYaaKF9I","name":"reverse right","rules":[{"t":"set","p":"payload","pt":"msg","to":"[8,0,7,1]","tot":"json"}],"action":"","property":"","from":"","to":"","reg":false,"x":616.7856674194336,"y":312.9999465942383,"wires":[["EOD-5sDAqoM"]]},{"id":"UamtW8Jh-c0","type":"change","z":"GVRIYaaKF9I","name":"reverse left","rules":[{"t":"set","p":"payload","pt":"msg","to":"[5,0,4,1]","tot":"json"}],"action":"","property":"","from":"","to":"","reg":false,"x":615.3571662902832,"y":271.85713386535645,"wires":[["EOD-5sDAqoM"]]},{"id":"IXesNgryRrQ","type":"change","z":"GVRIYaaKF9I","name":"high right & left","rules":[{"t":"set","p":"payload","pt":"msg","to":"[9,255,0,3,255,0]","tot":"json"}],"action":"","property":"","from":"","to":"","reg":false,"x":619.2141723632812,"y":230.14286422729492,"wires":[["BAtsltu4B_M"]]}]
 ```
+
+#### The End
