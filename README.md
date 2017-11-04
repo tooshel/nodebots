@@ -5,7 +5,7 @@
 #### DevFest Muncie 2017 (2017-11-04)
 [Google Presentations](https://docs.google.com/presentation/d/1uFcKQna4vpVr70hDIRsu3QGicuoHer7K3At79QF0rHs/edit?usp=sharing)
 
-#### WTM Tucson Hackathon 2017 - (2017-10-01)
+#### WTM Tucson Hackathon 2017 (2017-10-01)
 [Google Presentations](https://docs.google.com/a/ssmcgee.com/presentation/d/1qHpehuctY7qEv9xZZvn576_tejUQWGwgxtaPSUcAveQ/edit?usp=sharing)
 
 ## Pagenodes (the other "node" in nodebots)
