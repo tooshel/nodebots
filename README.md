@@ -2,6 +2,9 @@
 
 ## The presentations!
 
+#### Devfest NYC 2017 (2017-12-03)
+[Google Presentations](https://docs.google.com/a/ssmcgee.com/presentation/d/1JdGRbhiuv34gFTxBVfpyMSgligORqm-Em2-0M5ZWWm8/edit?usp=sharing)
+
 #### DevFest Muncie 2017 (2017-11-04)
 [Google Presentations](https://docs.google.com/presentation/d/1uFcKQna4vpVr70hDIRsu3QGicuoHer7K3At79QF0rHs/edit?usp=sharing)
 
