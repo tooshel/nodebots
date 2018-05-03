@@ -26,7 +26,7 @@ AGENDA
   * Motor controller
   * Tiny Tile - Intel Curie programmable with a Arduino IDE (picture of tile and IDE)
   * Chassis (platform, motors and wheels)
-  * Pagenodes (this is where the magic happens)
+  * Chirpers (this is where the magic happens)
   * LEDs
 
 
@@ -34,7 +34,7 @@ AGENDA
   * build the chassis
   * connect the batteries to the motor controller and the motor controller to the Tiny Tile
   * figure out what to do with LEDs and connect them
-  * do the pagenodes work!
+  * do the Chipers work!
   * plug in the Game Pad
   * control your robot
   * decorate and customize with popcycle sticks and glue (and glitter just because Embrie wanted it)!
