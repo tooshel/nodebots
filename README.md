@@ -2,6 +2,9 @@
 
 ## The presentations!
 
+#### WTM Tucson Hackathon 2019 (2019-10-20)
+[Google Presentations](https://docs.google.com/presentation/d/1UDe2asXifkpW4MEFAIo4tspxJWTvdvnJ8YJOmm5vpCk/edit?usp=sharing)
+
 #### Devfest NYC 2017 (2017-12-03)
 [Google Presentations](https://docs.google.com/a/ssmcgee.com/presentation/d/1JdGRbhiuv34gFTxBVfpyMSgligORqm-Em2-0M5ZWWm8/edit?usp=sharing)
 
